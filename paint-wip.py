@@ -37,9 +37,18 @@ def drawcircle(start, end):
     "Draw circle from start to end."
     up()
     goto(start.x, start.y)
+    begin_fill()
+    dist = abs(start-end)
+    #print(dist)
+
     down()
-    circle(start,end)    
+    circle(dist)
+    up()
     end_fill()
+
+
+
+    goto(end.x, end.y)
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -66,7 +75,7 @@ def store(key, value):
     state[key] = value
 
 state = {'start': None, 'shape': line}
-setup(420, 420, 370, 0)
+setup(420, 420, 0, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')

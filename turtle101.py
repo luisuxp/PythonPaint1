@@ -35,7 +35,7 @@ def circle(start, end):
     t.goto(start.x, start.y)
     t.down()
     dist = abs(start-end)
-    print(dist)
+    #print(dist)
     t.circle(dist)
     t.up()
     t.goto(end.x, end.y)
